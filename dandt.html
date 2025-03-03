@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Date and Time Inputs</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime-local"] {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Important for consistent sizing */
+  width: 250px; /* Adjust width as needed */
+}
+
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime-local"]:focus {
+  outline: none;
+  border-color: #007bff; /* Example focus color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Example focus shadow */
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Date Input</h2>
+<label for="date">Select a date:</label>
+<input type="date" id="date" name="date"><br><br>
+
+<h2>Month Input</h2>
+<label for="month">Select a month and year:</label>
+<input type="month" id="month" name="month"><br><br>
+
+<h2>Week Input</h2>
+<label for="week">Select a week and year:</label>
+<input type="week" id="week" name="week"><br><br>
+
+<h2>Time Input</h2>
+<label for="time">Select a time:</label>
+<input type="time" id="time" name="time"><br><br>
+
+<h2>Date and Time Input (Local)</h2>
+<label for="datetime-local">Select a date and time (local):</label>
+<input type="datetime-local" id="datetime-local" name="datetime-local"><br><br>
+
+<h2>Datetime Input (Deprecated)</h2>
+<p>Note: The standard <code>&lt;input type="datetime"&gt;</code> has been 
+
+removed from HTML. Use <code>datetime-local</code> instead.</p>
+
+<h2>Date and Time Input with Min and Max</h2>
+<label for="datetime-local-range">Select a date and time (local) within a 
+
+range:</label>
+<input type="datetime-local" id="datetime-local-range" name="datetime-local-range" 
+
+min="2023-01-01T00:00" max="2024-12-31T23:59"><br><br>
+
+<h2>Date Input with Value</h2>
+<label for="date-value">Date with a default value:</label>
+<input type="date" id="date-value" name="date-value" value="2023-10-
+
+27"><br><br>
+
+<h2>Time Input with Steps</h2>
+<label for="time-steps">Time input with step (e.g., in 15-minute increments):</label>
+<input type="time" id="time-steps" name="time-steps" step="900"><br><br>
+
+<script>
+//Optional Javascript to get the value of the inputs.
+const dateInput = document.getElementById('date');
+dateInput.addEventListener('change', function() {
+  console.log('Date selected:', this.value);
+});
+
+const timeInput = document.getElementById('time');
+timeInput.addEventListener('change', function() {
+  console.log('Time selected:', this.value);
+});
+
+const datetimeLocalInput = document.getElementById('datetime-local');
